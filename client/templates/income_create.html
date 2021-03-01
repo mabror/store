@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="mt-3 border py-5 px-5 bg-dark rounded">
+    <form action="{% url 'income_create' %}" method="post" class="text-white">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-success ">Add</button>
+    </form>
+</div>
+
+{% endblock content %}
